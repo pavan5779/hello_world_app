@@ -19,6 +19,11 @@ jobs:
       - name: Log in to Amazon ECR
         id: ecr-login
         uses: aws-actions/amazon-ecr-login@v1
+        with:
+        registry-type: 'private'
+        region: 'ap-south-1' 
+        mask-password: false
+        skip-logout: false
 
       - name: Build, tag, and push Docker image to Amazon ECR
         env:
