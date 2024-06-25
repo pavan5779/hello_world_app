@@ -1,3 +1,10 @@
+terraform {
+  backend "s3" {
+    bucket = "pavan-your-terraform-state-bucket"
+    key    = "ecs/hello-world-app/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}
 provider "aws" {
   region = var.region
 }
@@ -58,7 +65,7 @@ resource "aws_ecs_service" "service" {
   network_configuration {
     subnets         = var.subnet_ids
     assign_public_ip = true
-    security_groups = [aws_security_group.group.id]
+    security_groups = ["sg-098d8e07dc8df4f85"]
   }
 
   load_balancer {
@@ -90,7 +97,7 @@ resource "aws_lb" "app_lb" {
   name               = "${var.app_name}-lb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.group.id]
+  security_groups    = ["sg-098d8e07dc8df4f85"]
   subnets            = var.subnet_ids
 }
 
