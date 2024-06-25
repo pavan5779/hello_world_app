@@ -7,7 +7,7 @@ variable "app_name" {
 }
 
 variable "vpc_id" {
-  description = "The VPC ID where ECS will be deployed"
+  description = "vpc-1"
 }
 
 variable "subnet_ids" {
