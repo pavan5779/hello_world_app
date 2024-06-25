@@ -68,7 +68,7 @@ resource "aws_ecs_service" "service" {
   }
 }
 
-resource "aws_security_group" "ecs_service" {
+resource "aws_security_group" "group" {
   vpc_id = var.vpc_id
 
   ingress {
