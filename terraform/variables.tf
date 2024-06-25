@@ -1,20 +1,25 @@
 variable "region" {
-  default = "ap-south-1"
-}
-
-variable "app_name" {
-  default = "hello-world-app"
-}
-
-variable "vpc_id" {
-  description = "vpc-1"
-}
-
-variable "subnet_ids" {
-  description = "The list of subnet IDs where ECS tasks will run"
-  type        = list(string)
+  description = "The AWS region to create resources in"
+  type        = string
+  default     = "ap-south-1"
 }
 
 variable "ecs_cluster_name" {
-  default = "hello-world-Terraform"
+  description = "The name of the ECS cluster"
+  type        = string
+}
+
+variable "app_name" {
+  description = "The name of the application"
+  type        = string
+}
+
+variable "vpc_id" {
+  description = "The ID of the VPC where resources will be created"
+  type        = string
+}
+
+variable "subnet_ids" {
+  description = "A list of subnet IDs for the ECS service"
+  type        = list(string)
 }
