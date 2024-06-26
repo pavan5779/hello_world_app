@@ -14,7 +14,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -60,7 +59,7 @@ jobs:
 
   destroy:
     runs-on: ubuntu-latest
-    if: github.event.inputs.destroy == 'true' # conditional execution
+    if: github.event.inputs.destroy == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
