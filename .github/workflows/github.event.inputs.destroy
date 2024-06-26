@@ -1,0 +1,2 @@
+- name: Debug Input
+  run: echo "Destroy input: ${{ github.event.inputs.destroy }}"
